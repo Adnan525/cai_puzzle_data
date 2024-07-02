@@ -27,7 +27,7 @@ for i, file in enumerate(files):
     next_move_number_data = fen.split(" ")[-1].replace('"', "")[:-1] # remove tailing square bracket
     moves_data = moves.split("#")[0]
     result_data = moves.split("#")[-1].strip()
-    player = "White" if result_data[-1] == "1" else "Black"
+    player = "Black" if result_data[-1] == "1" else "White"
     best_case = len(re.findall(r"(\d\.+\s{1})", moves_data))
     df.loc[i] = [setup_data, fen_data, next_move_number_data, moves_data, result_data, player, best_case]
     # print(f"[INFO] {file} has {setup}")
