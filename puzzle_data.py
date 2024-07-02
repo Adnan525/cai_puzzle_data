@@ -23,7 +23,7 @@ df = pd.DataFrame(columns=["setup", "FEN", "next_move_number", "moves", "result"
 for i, file in enumerate(files):
     setup, fen, moves = get_last_line_of_moves(f"{root_dir}/{file}")
     setup_data = setup.split(" ")[1].replace('"', "")[:-1] # remove tailing square bracket
-    fen_data = fen.split(" ")[1].replace('"', "")
+    fen_data = fen.split('"')[1]
     next_move_number_data = fen.split(" ")[-1].replace('"', "")[:-1] # remove tailing square bracket
     moves_data = moves.split("#")[0]
     result_data = moves.split("#")[-1].strip()
